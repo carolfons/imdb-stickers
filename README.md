@@ -1,3 +1,6 @@
+
+<img src = "https://user-images.githubusercontent.com/45009920/179688383-d292d403-60bf-46e6-8146-5d193150781c.png"/>
+
 ## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
