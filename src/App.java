@@ -1,4 +1,6 @@
+import java.io.InputStream;
 import java.net.URI;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -8,6 +10,7 @@ import java.util.Map;
 
 public class App {
     public static void main(String[] args) throws Exception {
+
         // criando a conxão http para buscar filmes
         String url = "https://alura-imdb-api.herokuapp.com/movies";
         HttpClient client = HttpClient.newHttpClient();
@@ -25,10 +28,17 @@ public class App {
         List<Map<String, String>> listaFilmes = jsonParser.parse(body);
         
         //exibindo os dados
+        StickerFactory stickerFactory = new StickerFactory();
         for (Map<String,String> filme : listaFilmes) {
-            System.out.println(filme.get("title"));
-            System.out.println(filme.get("image"));
-            System.out.println(filme.get("imDbRating"));
+            String urlImage = filme.get("image");
+            String titulo = filme.get("title");
+
+            String nomeArquivo = titulo;
+            InputStream inputStream = new URL(urlImage).openStream();
+            
+            stickerFactory.create(inputStream,nomeArquivo);
+
+            System.out.println(titulo);
             System.out.println();
         }
 
