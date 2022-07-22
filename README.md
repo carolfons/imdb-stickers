@@ -14,7 +14,7 @@
  - `IDE:`VS CODE 
  - `API:`<a href = "https://alura-imdb-api.herokuapp.com/movies">IMDb </a>
 
-## JAVA code in Visual Studio Code
+## JAVA no Visual Studio Code
 <p> A workspace contém 2 pastas default: </p>
 
   - `src`: pasta onde está localizada o source do projeto
